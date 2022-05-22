@@ -25,14 +25,6 @@ class Sand:
             sand_l.pop(0)
 
 
-def draw():
-    sand_fall()
-    win.fill((0, 0, 0))
-    for el in sand_l:
-        pygame.draw.circle(win, (255, 255, randint(1, 255)), (el[0], el[1]), 20)
-    pygame.display.update()
-
-
 def sand_fall():
     mx, my = pygame.mouse.get_pos()
     sand = Sand(mx, my)
@@ -40,6 +32,14 @@ def sand_fall():
     for j in sand_l:
         if j[1] <= HEIGHT - 1:
             j[1] += randint(1, 10)
+            
+            
+def draw():
+    sand_fall()
+    win.fill((0, 0, 0))
+    for el in sand_l:
+        pygame.draw.circle(win, (255, 255, randint(1, 255)), (el[0], el[1]), 20)
+    pygame.display.update()
 
 
 def main():
